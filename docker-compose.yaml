@@ -1,0 +1,30 @@
+version: '3'
+services:
+  service1:
+    build:
+      context: ./services  # Correct build context pointing to 'services/' directory
+    environment:
+      - SERVICE_NAME=service1
+    ports:
+      - "5001:5000"        # Mapping port 5001 on host to 5000 in container
+  service2:
+    build:
+      context: ./services  # Reuses the same Dockerfile in 'services/' directory
+    environment:
+      - SERVICE_NAME=service2
+    ports:
+      - "5002:5000"        # Mapping port 5002 on host to 5000 in container
+  service3:
+    build:
+      context: ./services  # Reuses the same Dockerfile in 'services/' directory
+    environment:
+      - SERVICE_NAME=service3
+    ports:
+      - "5003:5000"        # Mapping port 5003 on host to 5000 in container
+  service4:
+    build:
+      context: ./services  # Reuses the same Dockerfile in 'services/' directory
+    environment:
+      - SERVICE_NAME=service4
+    ports:
+      - "5004:5000"        # Mapping port 5004 on host to 5000 in container
